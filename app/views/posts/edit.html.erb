@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>뉴비톤!! 디버깅<small>edit.html.erb</small></h1>
+        <form action="/posts/update/<%= @post.id %>" method="POST">
+          <div class="form-group">
+            <label for="title">글 제목</label>
+            <input type="text" class="form-control" id="title" name="title" value="<%= @post.title %>" placeholder="글 제목을 입력하세요">
+          </div>
+          <div class="form-group">
+            <label for="user_name">작성자 이름</label>
+            <input type="text" class="form-control" id="user_name" name="user_name" value="<%= @post.user_name %>" placeholder="작성자 이름을 입력하세요">
+          </div>
+          <div class="form-group">
+              <label for="content">내용</label>
+              <textarea name="content" class="form-control" rows="3"><%= @post.content %></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">제출</button>
+        </form>
+    </div>
+</div>

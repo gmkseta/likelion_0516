@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>뉴비톤!! 디버깅<small>index.html.erb</small></h1>
+        <a class="btn btn-default" href="/posts/new" role="button">글 쓰기</a>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th>id</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>버튼</th>
+                </tr>
+                <%= @posts.do each |p| %>
+                <tr>
+                    <td><%= p.id %></td>
+                    <td><%= p.title %></td>
+                    <td><%= p.user_name %></td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <a href="/posts/show/?" class="btn btn-default">보기</a>
+                            <a href="/posts/edit/?" class="btn btn-success">수정</a>
+                            <a href="/posts/delete/?" class="btn btn-danger">삭제</a>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
