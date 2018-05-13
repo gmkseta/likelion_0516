@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = post.all
+    @posts = Post.all
   end
 
   def new
@@ -8,14 +8,16 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new
-    @post.title = params[:name]
-    @post.user_name = params[:user_title]
-    @post.content = params[:body]
+    @post.title = params[:title]
+    @post.user_name = params[:user_name]
+    @post.content = params[:content]
     @post.save
     redirect_to "/posts/show/#{@post.id}"
   end
   
   def edit
+    @post = Post.find(params[:id])
+    
   end
   
   def update
@@ -24,6 +26,7 @@ class PostsController < ApplicationController
     @post.user_name = params[:user_name]
     @post.content = params[:content]
     @post.save
+    redirect_to "/posts/show/#{@post.id}"
   end
   
   def show

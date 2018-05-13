@@ -10,16 +10,16 @@
                     <th>작성자</th>
                     <th>버튼</th>
                 </tr>
-                <%= @posts.do each |p| %>
+                <% @posts.each do |p| %>
                 <tr>
                     <td><%= p.id %></td>
                     <td><%= p.title %></td>
                     <td><%= p.user_name %></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="/posts/show/?" class="btn btn-default">보기</a>
-                            <a href="/posts/edit/?" class="btn btn-success">수정</a>
-                            <a href="/posts/delete/?" class="btn btn-danger">삭제</a>
+                            <a href="/posts/show/<%=p.id%>" class="btn btn-default">보기</a>
+                            <a href="/posts/edit/<%=p.id%>" class="btn btn-success">수정</a>
+                            <a href="/posts/delete/<%=p.id%>" class="btn btn-danger">삭제</a>
                         </div>
                         
                     </td>
