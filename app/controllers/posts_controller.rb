@@ -33,10 +33,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
   
-  def delete
+  def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to "/posts/index"
+    redirect_to :root
   end
   
 end
